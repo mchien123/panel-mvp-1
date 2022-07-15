@@ -10,6 +10,7 @@ const app = express()
 const port = process.env.PORT
 
 // MAKE SURE TOCHANGE PASSWORD TO .ENV THING
+// Random 
 mongoose.connect(process.env.MONGO_URA);
 
 app.get('/', (req, res) => {
