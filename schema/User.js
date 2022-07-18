@@ -18,12 +18,12 @@ const userSettings = new mongoose.Schema({
 // User
 const userSchema = new mongoose.Schema({
   // https://mongoosejs.com/docs/schematypes.html
-  device: [mongoose.SchemaTypes.ObjectId],
   googleID: reqStr,
+  name: reqStr,
+  device: [mongoose.SchemaTypes.ObjectId],
   image: String,
   createdAt: {type: Date, default: Date.now},
   userSettings: userSettings,
-  name: reqStr,
   age: reqInt,
   location: reqStr,
   oldData: [mongoose.SchemaTypes.ObjectId]
