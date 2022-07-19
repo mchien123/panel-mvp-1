@@ -4,6 +4,7 @@ const dotenv = require('dotenv'); // can be removed w/ heroku
 const passport = require('passport');
 const session = require('express-session');
 const connectDB = require('./config/db');
+const MongoStore = require('connect-mongo')
 const { ensureAuth, ensureGuest } = require('./middleware/auth')
 
 const Panel = require('./schema/Panel');
@@ -25,7 +26,8 @@ const port = process.env.PORT
 app.use(session({
   secret: 'cupcakes29 hotwheels2002 leafblower33 wafbwaubufiaganwg',
   resave: false,
-  saveUninitialized: false
+  saveUninitialized: false,
+  store: MongoStore.create({ mongoUrl: process.env.MONGO_URI})
 }))
 
 // passport middleware
