@@ -17,7 +17,7 @@ dotenv.config({ path: './config/config.env'})
 
 require('./config/passport')(passport)
 
-connectDB()
+await connectDB()
 
 const app = express()
 const port = process.env.PORT
