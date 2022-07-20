@@ -12,6 +12,8 @@ const User = require('./schema/User');
 const TimeData = require('./schema/TimeData');
 const Breaker = require('./schema/Breaker');
 
+const timedataRouter = require('./routes/timedata-route')
+
 // this will be removed after we use heroku 
 dotenv.config({ path: './config/config.env'})
 
@@ -37,7 +39,7 @@ app.use(passport.session())
 
 // Routes
 app.use('/auth', require('./routes/auth'))
-
+app.use('/timedata', timedataRouter)
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
