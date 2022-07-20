@@ -19,6 +19,7 @@ dotenv.config({ path: './config/config.env'})
 
 require('./config/passport')(passport)
 
+// test te stt
 connectDB()
 
 const app = express()
